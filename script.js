@@ -1,3 +1,49 @@
+// ========== BACKGROUND MUSIC ==========
+let bgMusic = null;
+let musicStarted = false;
+
+function initMusic() {
+    bgMusic = document.getElementById('bg-music');
+    if (bgMusic) {
+        bgMusic.volume = 0.4;
+        // Try autoplay immediately
+        bgMusic.play().then(() => {
+            musicStarted = true;
+            document.getElementById('music-toggle').classList.add('playing');
+            document.getElementById('music-icon').textContent = '🎵';
+        }).catch(() => {
+            // Autoplay blocked by browser, will start on first user tap
+        });
+    }
+}
+
+function startMusicOnInteraction() {
+    if (musicStarted || !bgMusic) return;
+    bgMusic.play().then(() => {
+        musicStarted = true;
+        document.getElementById('music-toggle').classList.add('playing');
+        document.getElementById('music-icon').textContent = '🎵';
+    }).catch(() => {
+        // Autoplay blocked, will try again on next click
+    });
+}
+
+function toggleMusic() {
+    if (!bgMusic) return;
+    if (bgMusic.paused) {
+        bgMusic.play().then(() => {
+            musicStarted = true;
+            document.getElementById('music-toggle').classList.add('playing');
+            document.getElementById('music-icon').textContent = '🎵';
+        }).catch(() => {});
+    } else {
+        bgMusic.pause();
+        document.getElementById('music-toggle').classList.remove('playing');
+        document.getElementById('music-icon').textContent = '🔇';
+    }
+}
+
+
 // ========== SOUND SYSTEM ==========
 let audioCtx = null;
 
@@ -100,16 +146,17 @@ function sayILoveYou() {
                 phrases[Math.floor(Math.random() * phrases.length)]
             );
             msg.rate = 0.85;
-            msg.pitch = 1.1;
+            msg.pitch = 0.9;
             msg.volume = 0.8;
 
-            // Try to use a female voice
+            // Try to use a male voice
             const voices = speechSynthesis.getVoices();
-            const femaleVoice = voices.find(v =>
-                v.name.includes('Female') || v.name.includes('Zira') ||
-                v.name.includes('Samantha') || v.name.includes('Google')
+            const maleVoice = voices.find(v =>
+                v.name.includes('Male') || v.name.includes('David') ||
+                v.name.includes('Mark') || v.name.includes('Daniel') ||
+                v.name.includes('Google UK English Male')
             );
-            if (femaleVoice) msg.voice = femaleVoice;
+            if (maleVoice) msg.voice = maleVoice;
 
             speechSynthesis.speak(msg);
         }
@@ -309,6 +356,40 @@ function createHeartBurst(x, y) {
 }
 
 
+// ========== FLOWER OFFERING ==========
+function offerFlower(card) {
+    if (card.classList.contains('offered')) return;
+
+    card.classList.add('offered');
+    playEnvelopeSound();
+
+    // Heart burst from the flower
+    const rect = card.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    createHeartBurst(centerX, centerY);
+
+    // Cute popup
+    const messages = [
+        '🌹 For you, janu!',
+        '💐 So beautiful!',
+        '🌸 Love u babe!',
+        '💕 Accept this!',
+        '✨ Tui special!',
+        '🌷 Only for you!'
+    ];
+    setTimeout(() => {
+        const cutePopup = document.createElement('div');
+        cutePopup.classList.add('cute-popup');
+        cutePopup.innerHTML = messages[Math.floor(Math.random() * messages.length)];
+        cutePopup.style.left = Math.max(10, Math.min(centerX - 70, window.innerWidth - 180)) + 'px';
+        cutePopup.style.top = Math.max(10, centerY - 80) + 'px';
+        document.body.appendChild(cutePopup);
+        setTimeout(() => cutePopup.remove(), 3000);
+    }, 200);
+}
+
+
 // ========== YES / NO QUESTION ==========
 function showYesResponse() {
     const response = document.getElementById('yes-response');
@@ -380,6 +461,7 @@ function createFireworks() {
 document.addEventListener('DOMContentLoaded', () => {
     createFloatingHearts();
     updateProgressDots(1);
+    initMusic();
 
     // Preload voices for SpeechSynthesis
     if ('speechSynthesis' in window) {
@@ -387,15 +469,19 @@ document.addEventListener('DOMContentLoaded', () => {
         speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
     }
 
-    // Tap anywhere creates heart + initializes audio context
+    // Tap anywhere creates heart + initializes audio context + starts music
     document.addEventListener('click', (e) => {
         // Initialize audio on first click (mobile requirement)
         getAudioContext();
 
+        // Start background music on first interaction
+        startMusicOnInteraction();
+
         if (e.target.tagName === 'BUTTON' ||
             e.target.closest('.reason-card') ||
             e.target.closest('.envelope') ||
-            e.target.tagName === 'IFRAME') {
+            e.target.closest('.flower-card') ||
+            e.target.closest('.music-toggle')) {
             return;
         }
 

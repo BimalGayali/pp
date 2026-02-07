@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Meghbalika ❤️</title>
+    <title>For My Uma ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Floating Hearts Background -->
     <div class="hearts-container"></div>
 
+    <!-- Background Music -->
+    <audio id="bg-music" loop autoplay preload="auto">
+        <source src="Matthew_Ifield_-_I_Think_They_Call_This_Love_-_Cover_(mp3.pm).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="music-toggle" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+    </button>
+
     <!-- Page 1: Landing -->
     <div class="page active" id="page-1">
         <div class="page-content">
             <div class="cute-sparkle">✨</div>
-            <h1 class="main-title">মেঘবালিকা 💖</h1>
+            <h1 class="main-title">উমা 💖</h1>
             <p class="subtitle">My Janu ~ My Bubu ~ My Everything</p>
             <div class="heart-icon">💕</div>
-            <p class="landing-hint">তোমার জন্য কিছু বানিয়েছি... 🌸</p>
+            <p class="landing-hint">তোর জন্য কিছু বানিয়েছি... 🌸</p>
             <button class="btn-next" onclick="goToPage(2)">Open My Heart 💌</button>
         </div>
     </div>
@@ -27,27 +37,27 @@
         <div class="page-content">
             <h2 class="page-title">তোমার জন্য... 💕</h2>
             <div class="letter-content">
-                <p class="letter-greeting">আমার প্রিয় মেঘবালিকা,</p>
+                <p class="letter-greeting">উমা,</p>
 
                 <p class="letter-text">
-                    জানো, প্রথমবার যখন তোমার সাথে কথা হয়েছিল, আমার মনে হয়েছিল আমি কোনো স্বপ্নের মধ্যে আছি। তোমার হাসি, তোমার কথা বলার স্টাইল, তোমার চোখের সেই নির্মল দৃষ্টি - সব কিছু যেন আমাকে টেনে নিয়ে গেছিল অন্য এক জগতে। 🌙
+                    জানো, প্রথমবার যখন তোর সাথে কথা হয়েছিল, তখন আমার সত্যিই মনে হয়েছিল আমি কোনো স্বপ্নের ভেতরে ঢুকে পড়েছি। তোর হাসি, তোর কথা বলার ভঙ্গি, তোর চোখের সেই শান্ত, নির্মল দৃষ্টি—সবকিছু মিলিয়ে তুই আমাকে টেনে নিয়ে গিয়েছিলি এক আলাদা জগতে। 🌙
                 </p>
 
                 <p class="letter-text">
-                    তুমি জান না জানু, তোমার ছোট ছোট জিনিসগুলো আমি কতটা লক্ষ্য করি। যেভাবে তুমি excite হয়ে যাও ছোট ছোট জিনিসে, যেভাবে তুমি care কর সবার জন্য, যেভাবে তুমি আমার সাথে তোমার সব কথা share কর - এই সব কিছুই তোমাকে আরো special করে দেয়। 🌺
+                    তুই হয়তো জানিস না, কিন্তু তোর ছোট ছোট জিনিসগুলো আমি খুব মন দিয়ে লক্ষ্য করি। ছোট্ট কথায় যেভাবে তুই excite হয়ে যাস, যেভাবে তুই সবার জন্য care করিস, আর আমার সাথে নির্ভর করে তোর সব কথা share করিস—এই সবকিছুই তোকে আমার কাছে আরও বেশি special করে তোলে। 🌺
                 </p>
 
                 <p class="letter-text">
-                    আমার bubu, তুমি শুধু আমার girlfriend নও - তুমি আমার best friend, আমার support system, আমার সব। যখন তোমার সাথে কথা বলি, মনে হয় দুনিয়ার সব tension দূর হয়ে যায়। তোমার voice শুনলেই আমার day ভালো হয়ে যায়। 💝
+                    উমা, তুই শুধু আমার girlfriend নোস—তুই আমার partner, আমার best friend, আমার support system, আমার সবকিছু। তোর সাথে কথা বললেই দুনিয়ার সব টেনশন দূর হয়ে যায়। তোর voice শুনলেই আমার দিনটা ভালো হয়ে যায়। 💝
                 </p>
 
                 <p class="letter-text bengali-love">
-                    আমি তোমায় ভালোবাসি মেঘবালিকা... শুধু আজ নয়, প্রতিদিন, প্রতি মুহূর্তে। তুমি আমার forever. 💖✨
+                    আমি তোকে ভালোবাসি, উমা—শুধু আজ নয়, প্রতিদিন, প্রতিটা মুহূর্তে। তুই আমার forever। 💖✨
                 </p>
 
                 <p class="letter-signature">
-                    সব সময় তোমার,<br>
-                    তোমার Love 🌹
+                    সবসময় তোরই,<br>
+                    তোর Love 🌹
                 </p>
             </div>
             <button class="btn-next" onclick="goToPage(3)">আরো কিছু আছে... 💕</button>
@@ -67,7 +77,7 @@
                         <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
-                        <p>তোমার হাসি যেভাবে আমার পুরো world light up করে দেয় - সেই সময় মনে হয় এই মুহূর্তটাই আমার জীবনের সবচেয়ে beautiful moment 🌟</p>
+                        <p>তোর হাসিটা যেভাবে আমার পুরো দুনিয়াটা আলোকিত করে দেয়—ঠিক সেই মুহূর্তে মনে হয়, এইটাই আমার জীবনের সবচেয়ে সুন্দর moment। তুই হাসলেই সবকিছু ঠিক হয়ে যায়। 🌟</p>
                     </div>
                 </div>
 
@@ -77,7 +87,7 @@
                         <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
-                        <p>যেভাবে তুমি না বলেই আমার mood বুঝে যাও, আমার feelings টের পাও - এই connection শুধু tumi আর ami-র মধ্যেই possible. তুমি আমার soulmate জানু 💫</p>
+                        <p>তুই কিছু না বললেও যেভাবে আমার mood বুঝে যাস, আমার feelings ধরতে পারিস—এই connectionটা শুধু আমাদেরই। তুই আমাকে যেভাবে বোঝিস, সেটা আমি কোথাও পাই না। 💫</p>
                     </div>
                 </div>
 
@@ -87,7 +97,7 @@
                         <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
-                        <p>তোমার cute হাসির sound আমার favorite sound bubu! যখন তুমি haso, আমার মনে হয় পুরো দুনিয়াটা কী সুন্দর 🎶💕</p>
+                        <p>তোর হাসির শব্দটা আমার সবচেয়ে প্রিয় sound। তুই যখন হাসিস, তখন মনে হয় দুনিয়াটা হঠাৎ করে অনেক সুন্দর হয়ে গেছে। 🎶💕</p>
                     </div>
                 </div>
 
@@ -97,7 +107,7 @@
                         <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
-                        <p>তুমি যেভাবে সবার জন্য care কর - তোমার family, friends, even আমার জন্য - তোমার এই নিঃস্বার্থ heart-টাই তোমাকে এত special করে তুলেছে 💝</p>
+                        <p>তুই যেভাবে সবাইকে নিয়ে ভাবিস—তোর মানুষগুলোকে, আর আমাকে—তোর এই caring nature-টাই তোকে আমার চোখে এত special করে তোলে। 💝</p>
                     </div>
                 </div>
 
@@ -107,7 +117,7 @@
                         <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
-                        <p>তোমার dreams, তোমার ambitions - এগুলো দেখে আমি inspire হই জানু। তোমার মতো passionate আর determined কেউ নেই! I'm so proud of you 🌈</p>
+                        <p>তোর dreams আর ambitions আমাকে inspire করে। তুই যেভাবে নিজের লক্ষ্য নিয়ে serious থাকিস, সেটা দেখে আমার সত্যিই গর্ব হয়—তুই নিজের জায়গাটা নিজেই তৈরি করছিস। 🌈</p>
                     </div>
                 </div>
 
@@ -117,7 +127,7 @@
                         <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
-                        <p>তোমার সাথে থাকলে মনে হয় I'm home. তুমি আমার comfort zone, আমার safe place, আমার forever home. তোমার সাথে হলে সব কিছু perfect 💖✨</p>
+                        <p>তোর সাথে থাকলেই মনে হয় আমি ঘরে ফিরেছি। তুই আমার comfort zone, আমার safe place, আমার forever। তোর সাথে থাকলে সবকিছু সহজ আর ঠিকঠাক লাগে। 💖✨</p>
                     </div>
                 </div>
             </div>
@@ -139,9 +149,9 @@
                         <div class="envelope-seal">💌</div>
                     </div>
                     <div class="envelope-body">
-                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-label">Love u janu 💕</div>
                         <div class="envelope-letter">
-                            <p class="envelope-message">তোমার সাথে প্রথম কথা বলার পর থেকে, তুমি আমার সব thought-এ আছো bubu 🌙💕</p>
+                            <p class="envelope-message">তোর সাথে প্রথম কথা বলার পর থেকে, তুই আমার সব thought-এ আছিস bubu 🌙💕</p>
                         </div>
                     </div>
                 </div>
@@ -152,9 +162,9 @@
                         <div class="envelope-seal">💌</div>
                     </div>
                     <div class="envelope-body">
-                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-label">Love u babe 💖</div>
                         <div class="envelope-letter">
-                            <p class="envelope-message">জানু, sometimes আমি তোমার জন্য কিছু করতে পারি কিনা ভাবি - কারণ তুমি deserve কর world-টা 🌍✨</p>
+                            <p class="envelope-message">জানু, sometimes আমি তোর জন্য কিছু করতে পারি কিনা ভাবি — কারণ তুই deserve করিস পুরো world-টা 🌍✨</p>
                         </div>
                     </div>
                 </div>
@@ -165,9 +175,9 @@
                         <div class="envelope-seal">💌</div>
                     </div>
                     <div class="envelope-body">
-                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-label">Love u so much 💗</div>
                         <div class="envelope-letter">
-                            <p class="envelope-message">তোমার good morning text পেলে আমার পুরো দিনটাই special হয়ে যায়! তুমি আমার sunshine 🌞💖</p>
+                            <p class="envelope-message">তোর good morning text পেলে আমার পুরো দিনটাই special হয়ে যায়! তুই আমার sunshine 🌞💖</p>
                         </div>
                     </div>
                 </div>
@@ -178,130 +188,92 @@
                         <div class="envelope-seal">💌</div>
                     </div>
                     <div class="envelope-body">
-                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-label">Love u forever 💝</div>
                         <div class="envelope-letter">
-                            <p class="envelope-message">I want তোমার সাথে সব moments share করতে - happy ones, sad ones, silly ones... সব! তুমি আমার person 🌺💫</p>
+                            <p class="envelope-message">তোর সাথে সব moments share করতে চাই — happy ones, sad ones, silly ones... সব! তুই আমার person 🌺💫</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <button class="btn-next" onclick="goToPage(5)">কিছু songs... 🎵</button>
+            <button class="btn-next" onclick="goToPage(5)">তোর জন্য ফুল... 🌸</button>
         </div>
     </div>
 
-    <!-- Page 5: Songs -->
+    <!-- Page 5: Flowers for You -->
     <div class="page" id="page-5">
         <div class="page-content">
-            <h2 class="page-title">তোমার প্রিয় Songs 🎵</h2>
-            <p class="page-subtitle">আমাদের moments এর সাথে মিলে যাওয়া গানগুলো ~ 💕</p>
+            <h2 class="page-title">Flowers for You 🌸</h2>
+            <p class="page-subtitle">প্রতিটা ফুল tap করে তোকে offer করো ~ 💐</p>
 
-            <div class="songs-scroll">
-                <div class="song-card">
-                    <div class="song-header">
-                        <h3>🎵 Tum Hi Ho</h3>
-                        <p class="song-artist">Arijit Singh | Aashiqui 2</p>
+            <div class="flowers-scroll">
+                <div class="flowers-grid">
+                    <div class="flower-card" onclick="offerFlower(this)">
+                        <div class="flower-img-wrap">
+                            <img src="flowers/red-rose.jpg" alt="Red Rose">
+                            <div class="flower-offered-badge">💝 Offered!</div>
+                        </div>
+                        <div class="flower-info">
+                            <h3>Red Rose 🌹</h3>
+                            <p>তোর জন্য লাল গোলাপ, janu</p>
+                        </div>
                     </div>
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/IJq0yyWug1k"
-                            title="Tum Hi Ho"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+
+                    <div class="flower-card" onclick="offerFlower(this)">
+                        <div class="flower-img-wrap">
+                            <img src="flowers/sunflower.jpg" alt="Sunflower">
+                            <div class="flower-offered-badge">💝 Offered!</div>
+                        </div>
+                        <div class="flower-info">
+                            <h3>Sunflower 🌻</h3>
+                            <p>তুই আমার sunshine, bubu</p>
+                        </div>
                     </div>
-                    <p class="song-message">तुम ही हो... exactly তুমিই তো আমার সব কিছু janu 💕</p>
+
+                    <div class="flower-card" onclick="offerFlower(this)">
+                        <div class="flower-img-wrap">
+                            <img src="flowers/pink-rose.jpg" alt="Pink Rose">
+                            <div class="flower-offered-badge">💝 Offered!</div>
+                        </div>
+                        <div class="flower-info">
+                            <h3>Pink Rose 🌸</h3>
+                            <p>তোর beauty-র মতোই সুন্দর</p>
+                        </div>
+                    </div>
+
+                    <div class="flower-card" onclick="offerFlower(this)">
+                        <div class="flower-img-wrap">
+                            <img src="flowers/white-lily.jpg" alt="White Lily">
+                            <div class="flower-offered-badge">💝 Offered!</div>
+                        </div>
+                        <div class="flower-info">
+                            <h3>White Lily 🤍</h3>
+                            <p>তোর innocence-র মতো pure</p>
+                        </div>
+                    </div>
+
+                    <div class="flower-card" onclick="offerFlower(this)">
+                        <div class="flower-img-wrap">
+                            <img src="flowers/tulip.jpg" alt="Tulip">
+                            <div class="flower-offered-badge">💝 Offered!</div>
+                        </div>
+                        <div class="flower-info">
+                            <h3>Tulip 🌷</h3>
+                            <p>তোর সাথে spring আসে আমার life-এ</p>
+                        </div>
+                    </div>
+
+                    <div class="flower-card" onclick="offerFlower(this)">
+                        <div class="flower-img-wrap">
+                            <img src="flowers/orchid.jpg" alt="Orchid">
+                            <div class="flower-offered-badge">💝 Offered!</div>
+                        </div>
+                        <div class="flower-info">
+                            <h3>Orchid 💜</h3>
+                            <p>তোর মতোই rare আর precious</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="song-card">
-                    <div class="song-header">
-                        <h3>🎵 Tomake Chai</h3>
-                        <p class="song-artist">Arijit Singh</p>
-                    </div>
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/jXbZLjUhD3w"
-                            title="Tomake Chai"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="song-message">তোমাকে চাই bubu... শুধু তোমাকেই, forever 💖🌸</p>
-                </div>
-
-                <div class="song-card">
-                    <div class="song-header">
-                        <h3>🎵 Channa Mereya</h3>
-                        <p class="song-artist">Arijit Singh | Ae Dil Hai Mushkil</p>
-                    </div>
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/bzSTpdcs-EI"
-                            title="Channa Mereya"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="song-message">তোমার জন্য আমার সব feelings bubu 🌙💫</p>
-                </div>
-
-                <div class="song-card">
-                    <div class="song-header">
-                        <h3>🎵 Pehla Nasha</h3>
-                        <p class="song-artist">Udit Narayan | Jo Jeeta Wohi Sikandar</p>
-                    </div>
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/jiSRoRli68A"
-                            title="Pehla Nasha"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="song-message">पहला नशा... तुমিই আমার প্রথম ভালোবাসা janu 💞✨</p>
-                </div>
-
-                <div class="song-card">
-                    <div class="song-header">
-                        <h3>🎵 Tera Fitoor</h3>
-                        <p class="song-artist">Arijit Singh | Genius</p>
-                    </div>
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/FvFTx55l_vk"
-                            title="Tera Fitoor"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="song-message">তোমার fitoor-এ পাগল হয়ে গেছি bubu... তুমি আমার সব obsession 💕🌹</p>
-                </div>
-
-                <div class="song-card">
-                    <div class="song-header">
-                        <h3>🎵 Hawayein</h3>
-                        <p class="song-artist">Arijit Singh | Jab Harry Met Sejal</p>
-                    </div>
-                    <div class="video-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/dZRs1YGbcEk"
-                            title="Hawayein"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="song-message">हवाएं... তোমার কথা বলে জানু, তোমার memories নিয়ে আসে 🌬️💖</p>
-                </div>
-            </div>
-
-            <div class="playlist-note">
-                <p>🎧 এই songs গুলো শুনে আমাকে মনে রেখো ~ 🎧</p>
             </div>
 
             <button class="btn-next" onclick="goToPage(6)">এবার final কথা... 💖</button>
@@ -311,14 +283,14 @@
     <!-- Page 6: The Question -->
     <div class="page" id="page-6">
         <div class="page-content">
-            <h2 class="page-title">মেঘবালিকা... 💕</h2>
+            <h2 class="page-title">উমা... 💕</h2>
             <div class="question-box">
                 <p class="question-text">
                     আমি জানি না কীভাবে express করব...<br>
-                    কিন্তু তুমি আমার life-এর সবচেয়ে beautiful part.<br><br>
-                    তোমার সাথে প্রতিটা moment, প্রতিটা conversation -<br>
-                    সবকিছু আমাকে realize করায় যে তুমিই আমার person. 🌙<br><br>
-                    <span class="bengali-important">আমার জীবনের প্রতিটা দিন তোমার সাথে কাটাতে চাই janu...</span>
+                    কিন্তু তুই আমার life-এর সবচেয়ে beautiful part.<br><br>
+                    তোর সাথে প্রতিটা moment, প্রতিটা conversation -<br>
+                    সবকিছু আমাকে realize করায় যে তুইই আমার person. 🌙<br><br>
+                    <span class="bengali-important">আমার জীবনের প্রতিটা দিন তোর সাথে কাটাতে চাই janu...</span>
                 </p>
                 <div class="question-heart">💖</div>
                 <h3 class="the-question">Will you be my forever, bubu? 🌸</h3>
@@ -329,8 +301,8 @@
                 <div id="yes-response" class="yes-response hidden">
                     <div class="response-content">
                         <h2>You made me the happiest person! 🎉✨</h2>
-                        <p class="response-message">আমি তোমাকে সারাজীবন ভালোবাসব মেঘবালিকা! 💖</p>
-                        <p class="response-message">তুমি আমার সব কিছু janu... I promise to make you smile everyday! 🌸</p>
+                        <p class="response-message">আমি তোকে সারাজীবন ভালোবাসব উমা! 💖</p>
+                        <p class="response-message">তুই আমার সব কিছু janu... I promise to make you smile everyday! 🌸</p>
                         <div class="celebration">🎊 💖 ✨ 💕 🎊</div>
                         <button class="btn-next" onclick="goToPage(7)" style="margin-top: 2rem;">Final Message 💫</button>
                     </div>
@@ -343,15 +315,15 @@
     <div class="page" id="page-7">
         <div class="page-content">
             <div class="final-message">
-                <h2 class="final-title">মেঘবালিকা 💖</h2>
+                <h2 class="final-title">উমা 💖</h2>
                 <p class="final-text">
-                    তুমি আমার today আর আমার সব tomorrows...
+                    তুই আমার today আর আমার সব tomorrows...
                 </p>
                 <p class="final-text">
                     আমার janu, আমার bubu, আমার everything 🌸
                 </p>
                 <p class="final-text bengali-love">
-                    আমি সব সময় তোমার পাশে থাকব 💕
+                    আমি সব সময় তোর পাশে থাকব 💕
                 </p>
                 <div class="heart-animation">
                     <span class="big-heart">💖</span>

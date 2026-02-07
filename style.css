@@ -281,10 +281,12 @@ body {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 2rem;
+    padding: 0 5px;
 }
 
 .reason-card {
-    height: 240px;
+    min-height: 200px;
+    height: auto;
     position: relative;
     cursor: pointer;
     perspective: 1000px;
@@ -292,16 +294,15 @@ body {
 
 .reason-front,
 .reason-back {
-    position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 200px;
     backface-visibility: hidden;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 1.2rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s;
 }
@@ -314,6 +315,9 @@ body {
 .reason-back {
     background: white;
     color: var(--dark-text);
+    position: absolute;
+    top: 0;
+    left: 0;
     transform: rotateY(180deg);
 }
 
@@ -326,7 +330,7 @@ body {
 }
 
 .reason-number {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -343,9 +347,11 @@ body {
 }
 
 .reason-back p {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     line-height: 1.7;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Page 4 - Envelopes */
@@ -482,83 +488,132 @@ body {
     50% { text-shadow: 0 0 15px rgba(255, 105, 180, 0.6); }
 }
 
-/* Page 5 - Songs */
-.songs-scroll {
-    max-height: 60vh;
+/* Page 5 - Flowers */
+.flowers-scroll {
+    max-height: 65vh;
     overflow-y: auto;
     margin-bottom: 1.5rem;
-    padding: 10px;
+    padding: 5px;
 }
 
-.song-card {
+.flowers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.flower-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.song-header {
-    padding: 1.2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+.flower-card:active {
+    transform: scale(0.95);
 }
 
-.song-header h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
+.flower-card.offered {
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.5);
 }
 
-.song-artist {
-    font-size: 0.85rem;
-    opacity: 0.9;
-    margin: 0;
-}
-
-.video-container {
+.flower-img-wrap {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
+    height: 160px;
     overflow: hidden;
-    background: #000;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
 }
 
-.video-container iframe {
+.flower-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.flower-card.offered .flower-img-wrap img {
+    transform: scale(1.1);
+}
+
+.flower-offered-badge {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    background: rgba(255, 71, 87, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.song-message {
-    padding: 1.2rem;
+.flower-card.offered .flower-offered-badge {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.flower-info {
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.flower-info h3 {
     font-size: 0.95rem;
-    color: var(--dark-text);
-    text-align: center;
-    font-style: italic;
-    line-height: 1.6;
-    margin: 0;
-    background: linear-gradient(to right, #fff5f9, #f0f9ff);
-}
-
-.playlist-note {
-    padding: 1.3rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    margin-bottom: 1rem;
-}
-
-.playlist-note p {
-    font-size: 1rem;
     color: var(--primary-color);
-    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.flower-info p {
+    font-size: 0.8rem;
+    color: var(--dark-text);
+    line-height: 1.4;
     margin: 0;
+}
+
+/* Music Toggle Button */
+.music-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle:active {
+    transform: scale(0.9);
+}
+
+.music-toggle.playing {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.8);
+    animation: musicPulse 2s ease infinite;
+}
+
+@keyframes musicPulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 4px 25px rgba(255, 105, 180, 0.5); }
 }
 
 /* Page 6 - Question */
