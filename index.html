@@ -10,22 +10,22 @@
     <!-- Floating Hearts Background -->
     <div class="hearts-container"></div>
 
-    <!-- Landing Section -->
-    <section id="landing" class="section landing-section">
-        <div class="landing-content">
+    <!-- Page 1: Landing -->
+    <div class="page active" id="page-1">
+        <div class="page-content">
             <div class="cute-sparkle">✨</div>
             <h1 class="main-title">মেঘবালিকা 💖</h1>
             <p class="subtitle">My Janu ~ My Bubu ~ My Everything</p>
             <div class="heart-icon">💕</div>
-            <p class="landing-hint">তোমার জন্য কিছু... 🌸</p>
-            <button class="btn-start" onclick="scrollToSection('love-letter')">Open My Heart 💌</button>
+            <p class="landing-hint">তোমার জন্য কিছু বানিয়েছি... 🌸</p>
+            <button class="btn-next" onclick="goToPage(2)">Open My Heart 💌</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Love Letter Section -->
-    <section id="love-letter" class="section love-letter-section">
-        <div class="container">
-            <h2 class="section-title">তোমার জন্য... 💕</h2>
+    <!-- Page 2: Love Letter -->
+    <div class="page" id="page-2">
+        <div class="page-content">
+            <h2 class="page-title">তোমার জন্য... 💕</h2>
             <div class="letter-content">
                 <p class="letter-greeting">আমার প্রিয় মেঘবালিকা,</p>
 
@@ -41,10 +41,6 @@
                     আমার bubu, তুমি শুধু আমার girlfriend নও - তুমি আমার best friend, আমার support system, আমার সব। যখন তোমার সাথে কথা বলি, মনে হয় দুনিয়ার সব tension দূর হয়ে যায়। তোমার voice শুনলেই আমার day ভালো হয়ে যায়। 💝
                 </p>
 
-                <p class="letter-text">
-                    I promise তোমাকে - তোমার bad days-এ আমি হাসাবো, তোমার dreams-এ support করবো, তোমার পাশে থাকব always. আমি তোমার জন্য সেই মানুষ হতে চাই যার কাছে তুমি সব সময় নিজেকে safe feel কর। 🏡
-                </p>
-
                 <p class="letter-text bengali-love">
                     আমি তোমায় ভালোবাসি মেঘবালিকা... শুধু আজ নয়, প্রতিদিন, প্রতি মুহূর্তে। তুমি আমার forever. 💖✨
                 </p>
@@ -54,19 +50,21 @@
                     তোমার Love 🌹
                 </p>
             </div>
+            <button class="btn-next" onclick="goToPage(3)">আরো কিছু আছে... 💕</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Reasons I Love You Section -->
-    <section id="reasons" class="section reasons-section">
-        <div class="container">
-            <h2 class="section-title">কেন তোমাকে ভালোবাসি? 💕</h2>
-            <p class="section-subtitle">tap করো আর জেনে নাও ~ 🌸</p>
+    <!-- Page 3: Why I Love You -->
+    <div class="page" id="page-3">
+        <div class="page-content">
+            <h2 class="page-title">কেন তোমাকে ভালোবাসি? 💕</h2>
+            <p class="page-subtitle">প্রতিটা card tap করো আর জেনে নাও ~ 🌸</p>
+
             <div class="reasons-grid">
                 <div class="reason-card" onclick="revealReason(this)">
                     <div class="reason-front">
                         <span class="reason-number">💖</span>
-                        <p class="reason-hint">Tap me! 🌺</p>
+                        <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
                         <p>তোমার হাসি যেভাবে আমার পুরো world light up করে দেয় - সেই সময় মনে হয় এই মুহূর্তটাই আমার জীবনের সবচেয়ে beautiful moment 🌟</p>
@@ -76,7 +74,7 @@
                 <div class="reason-card" onclick="revealReason(this)">
                     <div class="reason-front">
                         <span class="reason-number">🌸</span>
-                        <p class="reason-hint">Tap me! 💕</p>
+                        <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
                         <p>যেভাবে তুমি না বলেই আমার mood বুঝে যাও, আমার feelings টের পাও - এই connection শুধু tumi আর ami-র মধ্যেই possible. তুমি আমার soulmate জানু 💫</p>
@@ -86,7 +84,7 @@
                 <div class="reason-card" onclick="revealReason(this)">
                     <div class="reason-front">
                         <span class="reason-number">🎵</span>
-                        <p class="reason-hint">Tap me! 🌙</p>
+                        <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
                         <p>তোমার cute হাসির sound আমার favorite sound bubu! যখন তুমি haso, আমার মনে হয় পুরো দুনিয়াটা কী সুন্দর 🎶💕</p>
@@ -96,7 +94,7 @@
                 <div class="reason-card" onclick="revealReason(this)">
                     <div class="reason-front">
                         <span class="reason-number">🌺</span>
-                        <p class="reason-hint">Tap me! ✨</p>
+                        <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
                         <p>তুমি যেভাবে সবার জন্য care কর - তোমার family, friends, even আমার জন্য - তোমার এই নিঃস্বার্থ heart-টাই তোমাকে এত special করে তুলেছে 💝</p>
@@ -106,7 +104,7 @@
                 <div class="reason-card" onclick="revealReason(this)">
                     <div class="reason-front">
                         <span class="reason-number">🌟</span>
-                        <p class="reason-hint">Tap me! 💖</p>
+                        <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
                         <p>তোমার dreams, তোমার ambitions - এগুলো দেখে আমি inspire হই জানু। তোমার মতো passionate আর determined কেউ নেই! I'm so proud of you 🌈</p>
@@ -116,58 +114,89 @@
                 <div class="reason-card" onclick="revealReason(this)">
                     <div class="reason-front">
                         <span class="reason-number">🏡</span>
-                        <p class="reason-hint">Tap me! 🌸</p>
+                        <p class="reason-hint">Tap me!</p>
                     </div>
                     <div class="reason-back">
                         <p>তোমার সাথে থাকলে মনে হয় I'm home. তুমি আমার comfort zone, আমার safe place, আমার forever home. তোমার সাথে হলে সব কিছু perfect 💖✨</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Interactive Messages Section -->
-    <section id="messages" class="section messages-section">
-        <div class="container">
-            <h2 class="section-title">Secret Messages 💌</h2>
-            <p class="section-subtitle">envelopes গুলো tap কর আর পড়ো ~ 🎀</p>
+            <button class="btn-next" onclick="goToPage(4)">আরো আছে... 💌</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Secret Messages -->
+    <div class="page" id="page-4">
+        <div class="page-content">
+            <h2 class="page-title">Secret Messages 💌</h2>
+            <p class="page-subtitle">প্রতিটা envelope tap করো আর পড়ো ~ 🎀</p>
+
             <div class="envelopes-container">
-                <div class="envelope">
-                    <div class="envelope-flap"></div>
+                <div class="envelope" onclick="openEnvelope(this)">
+                    <div class="envelope-top">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-seal">💌</div>
+                    </div>
                     <div class="envelope-body">
-                        <div class="message">তোমার সাথে প্রথম কথা বলার পর থেকে, তুমি আমার সব thought-এ আছো bubu 🌙💕</div>
+                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-letter">
+                            <p class="envelope-message">তোমার সাথে প্রথম কথা বলার পর থেকে, তুমি আমার সব thought-এ আছো bubu 🌙💕</p>
+                        </div>
                     </div>
                 </div>
-                <div class="envelope">
-                    <div class="envelope-flap"></div>
+
+                <div class="envelope" onclick="openEnvelope(this)">
+                    <div class="envelope-top">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-seal">💌</div>
+                    </div>
                     <div class="envelope-body">
-                        <div class="message">জানু, sometimes আমি তোমার জন্য কিছু করতে পারি কিনা ভাবি - কারণ তুমি deserve কর world-টা 🌍✨</div>
+                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-letter">
+                            <p class="envelope-message">জানু, sometimes আমি তোমার জন্য কিছু করতে পারি কিনা ভাবি - কারণ তুমি deserve কর world-টা 🌍✨</p>
+                        </div>
                     </div>
                 </div>
-                <div class="envelope">
-                    <div class="envelope-flap"></div>
+
+                <div class="envelope" onclick="openEnvelope(this)">
+                    <div class="envelope-top">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-seal">💌</div>
+                    </div>
                     <div class="envelope-body">
-                        <div class="message">তোমার good morning text পেলে আমার পুরো দিনটাই special হয়ে যায়! তুমি আমার sunshine 🌞💖</div>
+                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-letter">
+                            <p class="envelope-message">তোমার good morning text পেলে আমার পুরো দিনটাই special হয়ে যায়! তুমি আমার sunshine 🌞💖</p>
+                        </div>
                     </div>
                 </div>
-                <div class="envelope">
-                    <div class="envelope-flap"></div>
+
+                <div class="envelope" onclick="openEnvelope(this)">
+                    <div class="envelope-top">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-seal">💌</div>
+                    </div>
                     <div class="envelope-body">
-                        <div class="message">I want তোমার সাথে সব moments share করতে - happy ones, sad ones, silly ones... সব! তুমি আমার person 🌺💫</div>
+                        <div class="envelope-label">Tap to open 💕</div>
+                        <div class="envelope-letter">
+                            <p class="envelope-message">I want তোমার সাথে সব moments share করতে - happy ones, sad ones, silly ones... সব! তুমি আমার person 🌺💫</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <button class="btn-next" onclick="goToPage(5)">কিছু songs... 🎵</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Songs for You Section -->
-    <section id="songs" class="section songs-section">
-        <div class="container">
-            <h2 class="section-title">তোমার প্রিয় Songs 🎵</h2>
-            <p class="section-subtitle">আমাদের moments এর সাথে মিলে যাওয়া গানগুলো ~ 💕</p>
+    <!-- Page 5: Songs -->
+    <div class="page" id="page-5">
+        <div class="page-content">
+            <h2 class="page-title">তোমার প্রিয় Songs 🎵</h2>
+            <p class="page-subtitle">আমাদের moments এর সাথে মিলে যাওয়া গানগুলো ~ 💕</p>
 
-            <div class="songs-grid">
-                <!-- Song 1 -->
+            <div class="songs-scroll">
                 <div class="song-card">
                     <div class="song-header">
                         <h3>🎵 Tum Hi Ho</h3>
@@ -185,7 +214,6 @@
                     <p class="song-message">तुम ही हो... exactly তুমিই তো আমার সব কিছু janu 💕</p>
                 </div>
 
-                <!-- Song 2 -->
                 <div class="song-card">
                     <div class="song-header">
                         <h3>🎵 Tomake Chai</h3>
@@ -203,7 +231,6 @@
                     <p class="song-message">তোমাকে চাই bubu... শুধু তোমাকেই, forever 💖🌸</p>
                 </div>
 
-                <!-- Song 3 -->
                 <div class="song-card">
                     <div class="song-header">
                         <h3>🎵 Channa Mereya</h3>
@@ -221,7 +248,6 @@
                     <p class="song-message">তোমার জন্য আমার সব feelings bubu 🌙💫</p>
                 </div>
 
-                <!-- Song 4 -->
                 <div class="song-card">
                     <div class="song-header">
                         <h3>🎵 Pehla Nasha</h3>
@@ -229,35 +255,33 @@
                     </div>
                     <div class="video-container">
                         <iframe
-                            src="https://www.youtube.com/embed/jAGE5f6n8Gg"
+                            src="https://www.youtube.com/embed/jiSRoRli68A"
                             title="Pehla Nasha"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="song-message">তুমি আমার first নেশা... and my last too 🌹💕</p>
+                    <p class="song-message">पहला नशा... तुমিই আমার প্রথম ভালোবাসা janu 💞✨</p>
                 </div>
 
-                <!-- Song 5 -->
                 <div class="song-card">
                     <div class="song-header">
-                        <h3>🎵 Tujhe Kitna Chahne Lage</h3>
-                        <p class="song-artist">Arijit Singh | Kabir Singh</p>
+                        <h3>🎵 Tera Fitoor</h3>
+                        <p class="song-artist">Arijit Singh | Genius</p>
                     </div>
                     <div class="video-container">
                         <iframe
-                            src="https://www.youtube.com/embed/n2CKw36Jfag"
-                            title="Tujhe Kitna Chahne Lage"
+                            src="https://www.youtube.com/embed/FvFTx55l_vk"
+                            title="Tera Fitoor"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="song-message">কতটা যে তোমাকে ভালোবাসি janu 💝✨</p>
+                    <p class="song-message">তোমার fitoor-এ পাগল হয়ে গেছি bubu... তুমি আমার সব obsession 💕🌹</p>
                 </div>
 
-                <!-- Song 6 -->
                 <div class="song-card">
                     <div class="song-header">
                         <h3>🎵 Hawayein</h3>
@@ -265,28 +289,30 @@
                     </div>
                     <div class="video-container">
                         <iframe
-                            src="https://www.youtube.com/embed/10FjfxiZOiw"
+                            src="https://www.youtube.com/embed/dZRs1YGbcEk"
                             title="Hawayein"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="song-message">তোমার touch, তোমার presence - everything feels like magic bubu 🌸💖</p>
+                    <p class="song-message">हवाएं... তোমার কথা বলে জানু, তোমার memories নিয়ে আসে 🌬️💖</p>
                 </div>
             </div>
 
             <div class="playlist-note">
-                <p>🎧 এই songs গুলো শুনে আমাকে মনে রেখো ~ আমিও তোমার কথা ভাবছি 🎧</p>
+                <p>🎧 এই songs গুলো শুনে আমাকে মনে রেখো ~ 🎧</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Special Question Section -->
-    <section id="question" class="section question-section">
-        <div class="container">
+            <button class="btn-next" onclick="goToPage(6)">এবার final কথা... 💖</button>
+        </div>
+    </div>
+
+    <!-- Page 6: The Question -->
+    <div class="page" id="page-6">
+        <div class="page-content">
+            <h2 class="page-title">মেঘবালিকা... 💕</h2>
             <div class="question-box">
-                <h2 class="question-title">মেঘবালিকা... 💕</h2>
                 <p class="question-text">
                     আমি জানি না কীভাবে express করব...<br>
                     কিন্তু তুমি আমার life-এর সবচেয়ে beautiful part.<br><br>
@@ -306,15 +332,16 @@
                         <p class="response-message">আমি তোমাকে সারাজীবন ভালোবাসব মেঘবালিকা! 💖</p>
                         <p class="response-message">তুমি আমার সব কিছু janu... I promise to make you smile everyday! 🌸</p>
                         <div class="celebration">🎊 💖 ✨ 💕 🎊</div>
+                        <button class="btn-next" onclick="goToPage(7)" style="margin-top: 2rem;">Final Message 💫</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Final Message Section -->
-    <section id="final" class="section final-section">
-        <div class="container">
+    <!-- Page 7: Final Message -->
+    <div class="page" id="page-7">
+        <div class="page-content">
             <div class="final-message">
                 <h2 class="final-title">মেঘবালিকা 💖</h2>
                 <p class="final-text">
@@ -333,7 +360,18 @@
                 <p class="final-date">8th February 2026 ~ Forever 💫</p>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Page Progress Indicator -->
+    <div class="page-progress">
+        <div class="progress-dot" data-page="1"></div>
+        <div class="progress-dot" data-page="2"></div>
+        <div class="progress-dot" data-page="3"></div>
+        <div class="progress-dot" data-page="4"></div>
+        <div class="progress-dot" data-page="5"></div>
+        <div class="progress-dot" data-page="6"></div>
+        <div class="progress-dot" data-page="7"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
